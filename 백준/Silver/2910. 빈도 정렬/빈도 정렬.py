@@ -1,5 +1,4 @@
 from sys import stdin
-from collections import Counter
 
 #[숫자: [빈도 수, 처음 등장한 인덱스]]
 
