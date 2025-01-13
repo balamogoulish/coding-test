@@ -12,7 +12,6 @@ dx, dy = [0, 0, 0, 1, -1], [0, 1, -1, 0, 0]
 def check(flower):
     tmp = 0
     visited = [[False for _ in range(n)] for _ in range(n)]
-    isAvailable = True
     for f in flower:
         cx, cy = f
         for i in range(5):
@@ -22,11 +21,7 @@ def check(flower):
                 visited[ny][nx] = True
 
             else:
-                isAvailable = False
-                tmp=3001
-                break
-        if not isAvailable:
-            break
+                return 3001
     return tmp
 
 #가장 자리를 제외한 좌표를 comb에 넣음
