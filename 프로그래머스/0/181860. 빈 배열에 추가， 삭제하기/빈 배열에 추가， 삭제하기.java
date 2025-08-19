@@ -1,20 +1,19 @@
 import java.util.*;
 
 class Solution {
-    public List<Integer> solution(int[] arr, boolean[] flag) {
-        List<Integer> answer = new ArrayList<>();
-        
+    public int[] solution(int[] arr, boolean[] flag) {
+        Stack<Integer> stack = new Stack<>();
         for(int i=0; i<arr.length; i++){
             if(flag[i]){
                 for(int j=0; j<arr[i]*2; j++){
-                    answer.add(arr[i]);
+                    stack.push(arr[i]);
                 }
             }else{
                 for(int j=0; j<arr[i]; j++){
-                    answer.remove(answer.size()-1);
+                    stack.pop();
                 }
             }
         }
-        return answer;
+        return stack.stream().mapToInt(Integer::intValue).toArray();
     }
 }
